@@ -72,6 +72,16 @@ Ad-Hoc Usage with Consul exec
 
 Detailed [here](https://github.com/DataDog/kvexpress#ad-hoc-usage-with-consul-exec).
 
+## Contributing
+
+We love pull requests from anyone. [Details are available here](https://github.com/DataDog/kvexpress-cookbook/blob/master/CONTRIBUTING.md).
+
+## Code of Conduct
+
+This project adheres to the [Open Code of Conduct][code-of-conduct]. By participating, you are expected to honor this code.
+[code-of-conduct]: http://todogroup.org/opencodeofconduct/#kvexpress/darron@froese.org
+
+
 License and Authors
 -------------------
 Authors:
