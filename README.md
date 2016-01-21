@@ -9,8 +9,6 @@ Requirements
 
 If you're not using Ubuntu - you can download [binary releases from Github](https://github.com/DataDog/kvexpress/releases).
 
-kvexpress
-
 Attributes
 ----------
 ```ruby
@@ -67,10 +65,12 @@ The Consul watch will look something like this:
 }
 ```
 
+If you don't use Chef - you can manually create the JSON needed for the Consul watch - use the above as a template.
+
 Ad-Hoc Usage with Consul exec
 -----
 
-TODO
+Detailed [here](https://github.com/DataDog/kvexpress#ad-hoc-usage-with-consul-exec).
 
 License and Authors
 -------------------
