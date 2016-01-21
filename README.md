@@ -80,10 +80,3 @@ We love pull requests from anyone. [Details are available here](https://github.c
 
 This project adheres to the [Open Code of Conduct][code-of-conduct]. By participating, you are expected to honor this code.
 [code-of-conduct]: http://todogroup.org/opencodeofconduct/#kvexpress/darron@froese.org
-
-
-License and Authors
--------------------
-Authors:
-
-Darron Froese
