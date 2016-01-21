@@ -1,0 +1,30 @@
+*~
+*#
+.#*
+\#*#
+.*.sw[a-z]
+*.un~
+pkg/
+
+# Berkshelf
+.vagrant
+/cookbooks
+/vendor/cookbooks
+
+# Bundler
+Gemfile.lock
+bin/*
+.bundle/*
+
+.coverage/*
+.kitchen/
+.kitchen.local.yml
+
+# Personalized environment files
+.envrc
+.ruby-version
+.ruby-gemset
+.rbenv-version
+.rvmrc
+
+.kitchen
