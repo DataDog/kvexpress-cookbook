@@ -8,9 +8,10 @@ Fork, then clone the repo:
 
 Set up your machine:
 
-    # Install the [Chef Development Kit](https://downloads.chef.io/chef-dk/)
-    # Install [VirtualBox](https://www.virtualbox.org/)
-    # Install [Vagrant](https://www.vagrantup.com/downloads.html)
+* Install the [Chef Development Kit](https://downloads.chef.io/chef-dk/)
+* Install [VirtualBox](https://www.virtualbox.org/)
+* Install [Vagrant](https://www.vagrantup.com/downloads.html)
+
     kitchen converge
 
 Make sure the tests pass:
