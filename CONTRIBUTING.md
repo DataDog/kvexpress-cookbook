@@ -6,11 +6,13 @@ Fork, then clone the repo:
 
     git clone git@github.com:your-username/kvexpress-cookbook.git
 
-Set up your machine:
+Install the required software:
 
 * Install the [Chef Development Kit](https://downloads.chef.io/chef-dk/)
 * Install [VirtualBox](https://www.virtualbox.org/)
 * Install [Vagrant](https://www.vagrantup.com/downloads.html)
+
+Once it's all installed:
 
     kitchen converge
 
