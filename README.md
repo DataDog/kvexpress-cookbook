@@ -1,6 +1,6 @@
 kvexpress Cookbook
 =============
-Installs [kvexpress](https://github.com/DataDog/kvexpress) and provides and LWRP to use it from within Chef.
+Installs [kvexpress](https://github.com/DataDog/kvexpress) and provides an LWRP to use it from within Chef.
 
 Requirements
 ------------
