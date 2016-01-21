@@ -36,8 +36,8 @@ describe 'kvexpress::default' do
   end
 
   files = ['/etc/testing-kvexpress/testing.ini',
-  '/etc/kvexpress-test.ini',
-  '/etc/kvexpress-test-quoting.ini']
+           '/etc/kvexpress-test.ini',
+           '/etc/kvexpress-test-quoting.ini']
 
   files.each do |tfile|
     describe file(tfile) do

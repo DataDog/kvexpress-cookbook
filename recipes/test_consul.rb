@@ -48,6 +48,6 @@ link '/etc/init.d/consul' do
 end
 
 service 'consul' do
-  supports :status => true
-  action [ :enable, :start ]
+  supports status: true
+  action [:enable, :start]
 end

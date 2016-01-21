@@ -61,7 +61,7 @@ def handler_key
     group_match = check_kvexpress_group(kvexpress_group.to_s)
     actual_key = "#{kvexpress_group}/#{key}" if group_match
   end
-  return actual_key
+  actual_key
 end
 
 def handler # rubocop:disable Metrics/AbcSize
