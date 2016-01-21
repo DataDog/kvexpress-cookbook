@@ -4,25 +4,22 @@ driver:
 
 provisioner:
   name: chef_zero
-  require_chef_omnibus: false
+  require_chef_omnibus: true
   client_rb:
     ssl_verify_mode: :verify_none # Chef outputs an ugly SSL warning otherwise
 
-busser:
-  root_path: /opt/busser
-
 platforms:
-  - name: datadog/ubuntu-12.04
-  - name: datadog/ubuntu-14.04
+  - name: ubuntu-12.04
+  - name: ubuntu-14.04
 
 suites:
   - name: default
     run_list:
-      - recipe[dd-base::chow_repo]
-      - recipe[dd-consul::default]
       - recipe[kvexpress::default]
-      - recipe[kvexpress::lwrp_test]
+  - name: testsuite
+    run_list:
+      - recipe[kvexpress::test_lwrp]
     attributes:
-      consul:
-        service_mode: bootstrap
+      kvexpress:
+        dogstatsd: true
       tags: kvexpress:canary

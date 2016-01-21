@@ -1,7 +1,7 @@
 # Encoding: utf-8
 #
 # Cookbook Name:: kvexpress
-# Recipe:: default
+# Recipe:: test_consul
 #
 # Copyright 2015, Datadog Inc.
 #
@@ -17,16 +17,37 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-package 'apt-transport-https'
+directories = ['/etc/consul.d', '/var/lib/consul', '/var/log/consul']
 
-apt_repository 'kvexpress' do
-  uri 'https://packagecloud.io/kvexpress/kvexpress/ubuntu'
-  components ['main']
-  distribution node['lsb']['codename']
-  key 'https://packagecloud.io/gpg.key'
+directories.each do |dir|
+  directory dir do
+    owner 'root'
+    group 'root'
+    mode 00755
+    recursive true
+    action :create
+  end
 end
 
-package 'kvexpress' do
-  version node['kvexpress']['version']
-  action :install
+package 'consul'
+
+cookbook_file '/etc/init/consul.conf' do
+  owner 'root'
+  group 'root'
+  mode 00644
+end
+
+cookbook_file '/etc/consul.d/default.json' do
+  owner 'root'
+  group 'root'
+  mode 00644
+end
+
+link '/etc/init.d/consul' do
+  to '/lib/init/upstart-job'
+end
+
+service 'consul' do
+  supports :status => true
+  action [ :enable, :start ]
 end

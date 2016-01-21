@@ -28,3 +28,5 @@ bin/*
 .rvmrc
 
 .kitchen
+
+Berksfile.lock

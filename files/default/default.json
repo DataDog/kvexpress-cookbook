@@ -1,0 +1,10 @@
+{
+  "client_addr": "127.0.0.1",
+  "data_dir": "/var/lib/consul",
+  "server": true,
+  "bootstrap": true,
+  "recursor": "8.8.8.8",
+  "bind_addr": "0.0.0.0",
+  "log_level": "debug",
+  "node_name": "kvexpress-consul"
+}

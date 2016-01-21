@@ -18,4 +18,17 @@
 # limitations under the License.
 
 default['kvexpress']['version'] = '1.9-1'
-default['kvexpress']['dogstatsd'] = true
+default['datadog']['url'] = 'https://app.datadoghq.com'
+
+# Where to place the JSON watches.
+default['consul']['config_dir'] = '/etc/consul.d'
+
+# If you're using Consul ACLs to protect the 'kvexpress/' KV space and kvexpress::server_config
+# default['consul']['acl']['kvexpress'] = 'acl-goes-here'
+
+# If you're using the Datadog API to send events and kvexpress::server_config
+# default['datadog']['api_key'] = 'api_key_goes_here'
+# default['datadog']['application_key'] = 'app_key_goes_here'
+
+# If you're using the Datadog agent - change to true for metrics:
+default['kvexpress']['dogstatsd'] = false

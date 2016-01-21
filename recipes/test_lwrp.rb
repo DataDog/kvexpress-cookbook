@@ -21,6 +21,9 @@
 # NOTE: THIS RECIPE IS NOT TO BE USED - IT'S ONLY FOR TESTING.
 #
 
+include_recipe 'kvexpress::default'
+include_recipe 'kvexpress::test_consul'
+
 bash 'load features.ini' do
   user 'root'
   cwd '/tmp'
@@ -116,7 +119,7 @@ end
 # NOTE: This file will be created AFTER Consul is restarted.
 # But the LWRP will create the watch - which will run after
 # Consul is restarted and will still create the file.
-# kvexpress will not crash in this scenario now with 1.4
+# kvexpress will not crash in this scenario now with 1.4+
 # like it did with 1.3 and previous.
 kvexpress 'failurethree' do
   location '/etc/consul-is-dead-but-i-am-still-here.ini'
@@ -127,6 +130,7 @@ bash 'wait 60 seconds' do
   user 'root'
   cwd '/tmp'
   code <<-EOH
+  service consul start
   sleep 60
   EOH
 end
