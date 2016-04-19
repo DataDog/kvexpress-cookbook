@@ -32,6 +32,14 @@ bash 'load features.ini' do
   EOH
 end
 
+bash 'load compressed features.ini' do
+  user 'root'
+  cwd '/tmp'
+  code <<-EOH
+  kvexpress in -k features-compressed -z true -u http://git.io/v4gTF
+  EOH
+end
+
 group 'dog' do
   action :create
 end
@@ -49,6 +57,17 @@ directory '/etc/testing-kvexpress/' do
   mode 00755
   recursive true
   action :create
+end
+
+kvexpress 'features-compressed' do
+  location '/etc/testing-kvexpress/features-compressed.ini'
+  key 'features-compressed'
+  compress true
+  owner 'dog'
+  mode '00644'
+  command 'w'
+  length 10
+  notifies :reload, 'service[consul]', :delayed
 end
 
 kvexpress 'features' do

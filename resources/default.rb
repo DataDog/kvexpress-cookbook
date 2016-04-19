@@ -27,6 +27,7 @@ attribute :location, required: true, kind_of: String
 attribute :key, required: true, kind_of: String
 attribute :length, required: false, default: 10, kind_of: Integer
 attribute :owner, required: false, kind_of: String
+attribute :compress, required: false, default: false, kind_of: [TrueClass, FalseClass]
 attribute :kvexpress_group, required: false, kind_of: String
 attribute :prefix, required: false, kind_of: String
 attribute :mode, required: false, default: '00640', kind_of: String
@@ -72,6 +73,7 @@ def handler # rubocop:disable Metrics/AbcSize
   handler_command += " -o #{owner}" unless owner.to_s.empty?
   handler_command += " -p '#{prefix}'" unless prefix.to_s.empty?
   handler_command += " -e '#{command}'" unless command.to_s.empty?
+  handler_command += " -z true" if compress == true
   handler_command
 end
 

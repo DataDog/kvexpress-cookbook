@@ -27,6 +27,14 @@ describe 'kvexpress::default' do
     it { should contain 'You have 7 unread messages.' }
   end
 
+  describe file('/etc/testing-kvexpress/features-compressed.ini') do
+    it { should be_file }
+    it { should be_mode 644 }
+    it { should be_owned_by 'dog' }
+    it { should be_grouped_into 'dog' }
+    it { should contain 'You have 7 unread messages.' }
+  end
+
   describe file('/etc/testing-kvexpress/another.ini') do
     it { should be_file }
     it { should be_mode 750 }
@@ -59,6 +67,10 @@ describe 'kvexpress::default' do
 
   describe file('/etc/consul.d/key-watch-features.json') do
     it { should contain "kvexpress out -k features.ini -f /etc/testing-kvexpress/features-test.ini -l 100 -c 00644 -d true -o dog -e 'w'" }
+  end
+
+  describe file('/etc/consul.d/key-watch-features-compressed.json') do
+    it { should contain "kvexpress out -k features-compressed -f /etc/testing-kvexpress/features-compressed.ini -l 10 -c 00644 -d true -o dog -e 'w' -z true" }
   end
 
   describe file('/etc/consul.d/key-watch-quoting.json') do

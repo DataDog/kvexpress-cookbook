@@ -38,6 +38,7 @@ Use the LWRP to get configuration from Consul during a Chef run - here's an exam
 ```ruby
 kvexpress 'consul_dns_hosts' do
   location '/etc/hosts.consul'
+  compress true
   key 'hosts'
   mode '00644'
   command 'sudo pkill -HUP dnsmasq'
@@ -59,7 +60,7 @@ The Consul watch will look something like this:
     {
       "type": "key",
       "key": "/kvexpress/hosts/checksum",
-      "handler": "kvexpress out -k hosts -f /etc/hosts.consul -l 10 -c 00644 -e 'sudo pkill -HUP dnsmasq'"
+      "handler": "kvexpress out -k hosts -f /etc/hosts.consul -l 10 -c 00644 -e 'sudo pkill -HUP dnsmasq' -z true"
     }
   ]
 }
