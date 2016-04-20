@@ -17,7 +17,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-default['kvexpress']['version'] = '1.11-1'
+default['kvexpress']['version'] = '1.12-1'
 default['datadog']['url'] = 'https://app.datadoghq.com'
 
 # Where to place the JSON watches.
