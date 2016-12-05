@@ -18,6 +18,7 @@
 # limitations under the License.
 
 default['kvexpress']['version'] = '1.12-1'
+default['kvexpress']['download_url'] = 'https://github.com/DataDog/kvexpress/releases/download/v1.12/kvexpress-1.12-linux-amd64.gz'
 default['datadog']['url'] = 'https://app.datadoghq.com'
 
 # Where to place the JSON watches.
